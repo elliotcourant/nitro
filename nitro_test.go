@@ -9,7 +9,10 @@
 
 package nitro
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+)
 import "sync/atomic"
 import "os"
 import "testing"
@@ -18,7 +21,7 @@ import "math/rand"
 import "sync"
 import "runtime"
 import "encoding/binary"
-import "github.com/t3rm1n4l/nitro/mm"
+import "github.com/elliotcourant/nitro/mm"
 
 var testConf Config
 
@@ -30,8 +33,14 @@ func init() {
 }
 
 func TestBlocksPerf(t *testing.T) {
+	t.Skip()
+	dir, err := ioutil.TempDir("", "nitro")
+	if err != nil {
+		panic(err)
+	}
+	defer os.RemoveAll(dir)
 	conf := testConf
-	conf.blockStoreDir = "./data"
+	conf.blockStoreDir = dir
 	db := NewWithConfig(conf)
 	defer db.Close()
 

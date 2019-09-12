@@ -3,7 +3,7 @@ package supernitro
 import (
 	"bytes"
 	"container/heap"
-	"github.com/t3rm1n4l/nitro"
+	"github.com/elliotcourant/nitro"
 )
 
 type Iterator struct {

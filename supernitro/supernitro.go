@@ -2,8 +2,8 @@ package supernitro
 
 import (
 	"fmt"
-	"github.com/t3rm1n4l/nitro"
-	"github.com/t3rm1n4l/nitro/mm"
+	"github.com/elliotcourant/nitro"
+	"github.com/elliotcourant/nitro/mm"
 	"sync"
 	"sync/atomic"
 	"time"
